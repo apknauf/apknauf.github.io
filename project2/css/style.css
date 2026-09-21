@@ -1,1 +1,147 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    color: #222222;
+    margin: 0;
+    line-height: 1.6;
+}
 
+
+.container {
+    width: 85%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+.site-header {
+    background-color: #2f5d3a;
+    color: white;
+    padding: 30px 0;
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+.course-label {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+}
+
+.subtitle {
+    margin: 5px 0 0 0;
+    font-size: 18px;
+}
+
+
+.main-nav {
+    background-color: #333333;
+    padding: 10px 0;
+}
+
+.main-nav .container {
+    display: flex;
+    gap: 20px;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.main-nav a:hover {
+    text-decoration: underline;
+}
+
+
+.proposal-section {
+    background-color: white;
+    margin: 25px 0;
+    padding: 25px;
+    border: 1px solid #dddddd;
+}
+
+.proposal-section h2 {
+    color: #2f5d3a;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 8px;
+}
+
+
+h3 {
+    color: #3f6f4a;
+}
+
+
+ul,
+ol {
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+
+.steps {
+    padding-left: 25px;
+}
+
+.data-list {
+    padding-left: 25px;
+}
+
+
+.choice-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.choice-card {
+    background-color: #f1f5f1;
+    border: 1px solid #cccccc;
+    padding: 15px;
+}
+
+.choice-card h3 {
+    margin-top: 0;
+}
+
+
+.page-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.page-list article {
+    border: 1px solid #cccccc;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+.page-list article h3 {
+    margin-top: 0;
+}
+
+
+a {
+    color: #245c35;
+}
+
+a:hover {
+    color: #163d24;
+}
+
+
+.site-footer {
+    background-color: #333333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
