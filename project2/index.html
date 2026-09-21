@@ -1,1 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CSCI 3054 Project 2 proposal for an Amazon Rainforest wildlife exploration web application.">
+    <meta name="author" content="Aidan Knauf">
+    <title>Project 2 Proposal | Amazon Rainforest Explorer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <p class="course-label">University of Mississippi &bull; CSCI 3054 Web Programming</p>
+            <h1>Amazon Rainforest Explorer</h1>
+            <p class="subtitle">Project 2 Topic Proposal</p>
+        </div>
+    </header>
 
+    <nav class="main-nav" aria-label="Main navigation">
+        <div class="container">
+            <a href="#topic">Topic</a>
+            <a href="#application">Application</a>
+            <a href="#interaction">Two-Step Interaction</a>
+            <a href="#pages">Application Pages</a>
+            <a href="#resources">Resources</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="topic" class="proposal-section">
+            <h2>Topic Description</h2>
+            <p>
+                The Amazon Rainforest Explorer will focus on the Amazon rainforest as an ecosystem and
+                on the wildlife that depends on it. The Amazon is the world's largest tropical rainforest
+                and river system and contains an extraordinary amount of biodiversity. According to the
+                World Wildlife Fund (WWF), the Amazon biome spans eight countries and French Guiana and
+                contains about one in ten known species on Earth. The region is also important because
+                its forests and rivers influence water cycles, store large amounts of carbon, and support
+                millions of people. These characteristics make the Amazon an interesting topic for an
+                educational web application because there is a large amount of information to explore,
+                but it can be difficult for a user to organize that information into a simple learning
+                experience.
+            </p>
+            <p>
+                Existing resources already provide information about the Amazon, but they often present
+                that information through articles, reports, educational activities, or large collections
+                of pages. For example, WWF provides extensive information about Amazon wildlife,
+                biodiversity, people, and environmental threats, while the Smithsonian's National Zoo
+                provides educational material and an Amazonia exhibit featuring rainforest animals.
+                My application would take a more focused approach by allowing a user to select a broad
+                animal group and then select a specific animal to receive a consistent set of information.
+                The goal is not to replace these resources, but to create a simple, interactive learning
+                tool that makes exploring Amazon wildlife easier for a student or casual visitor.
+            </p>
+        </section>
+
+        <section id="application" class="proposal-section">
+            <h2>Application Description</h2>
+            <p>
+                The proposed application will be called Amazon Rainforest Explorer. The home page will 
+                introduce users to the Amazon Rainforest and explain why it is important. It will 
+                include information about the rainforest, pictures, and a short explanation of what 
+                users can explore on the website.
+            </p>
+            <p>
+                The main page of the application will be the Wildlife Explorer. Users will first choose 
+                an animal category: mammals, birds, reptiles, or amphibians. After choosing a category, 
+                they will choose one of four animals from that category. The second choice will depend 
+                on the first choice. After selecting an animal, the website will show information such 
+                as its name, habitat, diet, interesting facts, conservation information, and pictures.
+            </p>
+            <p>
+                The third page will provide general information about the Amazon Rainforest. It will 
+                include information about the rainforest ecosystem, climate, rainforest layers, 
+                biodiversity, and environmental threats. The fourth page will be a Contact Us page. 
+                It will eventually allow users to enter their name, email address, and a message or 
+                question about the website.
+            </p>
+        </section>
+
+        <section id="interaction" class="proposal-section">
+            <h2>Two-Step Interaction and Data</h2>
+            <p>
+                The interaction is designed as a dependent two-step sequence. Step 1 determines the
+                choices available in Step 2. Each of the 16 final animal choices will use the same
+                information fields so that the data can later be stored consistently in JSON and a
+                database.
+            </p>
+
+            <ol class="steps">
+                <li>
+                    <strong>Step 1: Choose an animal category.</strong>
+                    <ul>
+                        <li>Mammals</li>
+                        <li>Birds</li>
+                        <li>Reptiles</li>
+                        <li>Amphibians</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Step 2: Choose an animal from the selected category.</strong>
+                    <ul>
+                        <li><strong>Mammals:</strong> Jaguar, Southern Two-toed Sloth, Giant River Otter, Capybara</li>
+                        <li><strong>Birds:</strong> Harpy Eagle, Scarlet Macaw, Toco Toucan, Hoatzin</li>
+                        <li><strong>Reptiles:</strong> Green Anaconda, Black Caiman, Green Iguana, Red-footed Tortoise</li>
+                        <li><strong>Amphibians:</strong> Strawberry Poison Dart Frog, Glass Frog, Amazon Horned Frog, Red-eyed Tree Frog</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>Final Information for Each Animal</h3>
+            <p>Every animal selection will display the same set of data:</p>
+            <ul class="data-list">
+                <li>Common name and scientific name</li>
+                <li>Three legally reusable images with attribution when required</li>
+                <li>Physical description</li>
+                <li>Diet</li>
+                <li>Typical habitat</li>
+                <li>Geographic range or map</li>
+                <li>Interesting facts</li>
+                <li>Conservation status or conservation information</li>
+            </ul>
+
+            <div class="choice-grid">
+                <article class="choice-card">
+                    <h3>Mammals</h3>
+                    <ol>
+                        <li>Jaguar</li>
+                        <li>Southern Two-toed Sloth</li>
+                        <li>Giant River Otter</li>
+                        <li>Capybara</li>
+                    </ol>
+                </article>
+                <article class="choice-card">
+                    <h3>Birds</h3>
+                    <ol>
+                        <li>Harpy Eagle</li>
+                        <li>Scarlet Macaw</li>
+                        <li>Toco Toucan</li>
+                        <li>Hoatzin</li>
+                    </ol>
+                </article>
+                <article class="choice-card">
+                    <h3>Reptiles</h3>
+                    <ol>
+                        <li>Green Anaconda</li>
+                        <li>Black Caiman</li>
+                        <li>Green Iguana</li>
+                        <li>Red-footed Tortoise</li>
+                    </ol>
+                </article>
+                <article class="choice-card">
+                    <h3>Amphibians</h3>
+                    <ol>
+                        <li>Strawberry Poison Dart Frog</li>
+                        <li>Glass Frog</li>
+                        <li>Amazon Horned Frog</li>
+                        <li>Red-eyed Tree Frog</li>
+                    </ol>
+                </article>
+            </div>
+        </section>
+
+        <section id="pages" class="proposal-section">
+            <h2>Planned Application Pages</h2>
+            <div class="page-list">
+                <article>
+                    <h3>1. Home</h3>
+                    <p>Introduction to the Amazon rainforest, its importance, and the purpose of the application. The page will include a large rainforest image, a short introduction, and links to the interactive wildlife explorer.</p>
+                </article>
+                <article>
+                    <h3>2. Wildlife Explorer</h3>
+                    <p>The interactive two-step page where users select an animal category and then an animal. The final selection will display the standardized animal information described above.</p>
+                </article>
+                <article>
+                    <h3>3. Amazon Ecosystem</h3>
+                    <p>A reading-focused page covering rainforest layers, biodiversity, climate, the Amazon River and basin, habitat relationships, conservation, and environmental threats. This information will not duplicate the individual animal records.</p>
+                </article>
+                <article>
+                    <h3>4. Contact Us</h3>
+                    <p>A static contact form that will eventually collect a user's name, email address, subject, and message. The form can later be connected to the course database.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="proposal-section">
+            <h2>Image and Data Plan</h2>
+            <p>
+                Images will be collected only from sources that permit reuse. Wikimedia Commons is one
+                planned source because its media files are individually labeled with licensing information.
+                Before using an image, I will check its individual file page, record the creator and license,
+                and include the required attribution on the website. Public-domain government images may also
+                be considered. I will not assume that an image is free to use simply because it appears in a
+                web search.
+            </p>
+            <p>
+                The application will initially use manually collected data rather than a third-party API.
+                The animal records will eventually be organized in JSON and later migrated to the database
+                specified by the course. This approach keeps the application focused on the required web
+                programming concepts while leaving room for additional information in later project stages.
+            </p>
+        </section>
+
+        <section id="resources" class="proposal-section">
+            <h2>Outside Resources and References</h2>
+            <ul class="resources">
+                <li>
+                    <a href="https://www.worldwildlife.org/places/amazon/" target="_blank" rel="noopener">
+                        World Wildlife Fund: The Amazon Rainforest
+                    </a>
+                </li>
+                <li>
+                    <a href="https://nationalzoo.si.edu/education/school-programs/explore-rainforest" target="_blank" rel="noopener">
+                        Smithsonian's National Zoo: Explore the Rainforest
+                    </a>
+                </li>
+                <li>
+                    <a href="https://commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia" target="_blank" rel="noopener">
+                        Wikimedia Commons: Reusing Content Outside Wikimedia
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>CSCI 3054 Web Programming &bull; Project 2 Proposal</p>
+        </div>
+    </footer>
+</body>
+</html>
