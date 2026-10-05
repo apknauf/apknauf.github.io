@@ -42,6 +42,11 @@ These image sources are used in the HTML pages through Wikimedia Commons URLs.
    Creator: Haui Ared
    Source: https://commons.wikimedia.org/wiki/File:Harpy-eagle-action.jpg
 
+9. Glass Frog
+   File: Centrolene quindianum02a.jpg
+   Creator: Mauricio Rivera Correa
+   Source: https://commons.wikimedia.org/wiki/File:Centrolene_quindianum02a.jpg
+
 GENERAL CONTENT SOURCES
 -----------------------
 World Wildlife Fund, "The Amazon":
