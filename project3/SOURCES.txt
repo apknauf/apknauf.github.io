@@ -71,6 +71,23 @@ These image sources are used in the HTML pages through Wikimedia Commons URLs.
    File: Opisthocomus hoazin 335722298.jpg 
    Creator: Philipp Hoenle
    Source: https://commons.wikimedia.org/wiki/File:Opisthocomus_hoazin_335722298.jpg 
+
+15: Black Caiman
+   File: Melanosuchus niger (cropped-01).jpg
+   Creator: David Stanley
+   Source: https://commons.wikimedia.org/wiki/File:Melanosuchus_niger_(cropped-01).jpg 
+
+16: Green Iguana
+   File: Green iguana (Iguana iguana).JPG 
+   Creator: Charles J. Sharp
+   Source: https://commons.wikimedia.org/wiki/File:Green_iguana_(Iguana_iguana).JPG 
+
+17: Red-footed Tortoise
+   File: Tortuga morrocoy Sabanero.jpg
+   Creator: Flints
+   Source: https://commons.wikimedia.org/wiki/File:Tortuga_morrocoy_Sabanero.jpg 
+
+
 GENERAL CONTENT SOURCES
 -----------------------
 World Wildlife Fund, "The Amazon":
