@@ -1,0 +1,68 @@
+AMAZON RAINFOREST EXPLORER — IMAGE SOURCES
+
+These image sources are used in the HTML pages through Wikimedia Commons URLs.
+Each individual file should be checked before submission, and the attribution
+shown on the site should remain with the image.
+
+1. Rainforest canopy
+   File: Rainforest canopy layer top view.jpg
+   Creator: Chamberlain of Nilai
+   License: CC BY-SA 4.0
+   Source: https://commons.wikimedia.org/wiki/File:Rainforest_canopy_layer_top_view.jpg
+
+2. Jaguar
+   File: Jaguar.jpg
+   Creator: Cburnett
+   License: CC BY-SA 3.0
+   Source: https://commons.wikimedia.org/wiki/File:Jaguar.jpg
+
+3. Sloth
+   File: Sloth 01.JPG
+   License: CC BY-SA 3.0
+   Source: https://commons.wikimedia.org/wiki/File:Sloth_01.JPG
+
+4. Scarlet Macaw
+   File: Scarlet Macaw.jpg
+   Creator: Cburnett
+   License: CC BY-SA 3.0
+   Source: https://commons.wikimedia.org/wiki/File:Scarlet_Macaw.jpg
+
+5. Toucan
+   File: Toucan.jpg
+   License: CC BY-SA 4.0
+   Source: https://commons.wikimedia.org/wiki/File:Toucan.jpg
+
+6. Green Anaconda
+   File: Green-anaconda.jpg
+   Creator: Steven G. Johnson
+   License: CC BY-SA 3.0
+   Source: https://commons.wikimedia.org/wiki/File:Green-anaconda.jpg
+
+7. Poison Dart Frog
+   File: Poison Dart Frog.jpg
+   Creator: Dwayne Reilander
+   License: CC BY-SA 4.0
+   Source: https://commons.wikimedia.org/wiki/File:Poison_Dart_Frog.jpg
+
+8. Harpy Eagle
+   File: Harpy-eagle-action.jpg
+   Creator: Haui Ared
+   License: CC BY-SA 4.0
+   Source: https://commons.wikimedia.org/wiki/File:Harpy-eagle-action.jpg
+
+GENERAL CONTENT SOURCES
+-----------------------
+World Wildlife Fund, "The Amazon":
+https://www.worldwildlife.org/places/amazon/
+
+Smithsonian National Zoo, "Explore the Rainforest":
+https://nationalzoo.si.edu/education/school-programs/explore-rainforest
+
+Wikimedia Commons reuse information:
+https://commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia
+
+NOTE
+----
+The animal descriptions in the project are educational sample content for the
+static mock-up. For later stages, verify species facts and conservation status
+against authoritative sources before expanding the database.
