@@ -34,8 +34,6 @@ function updatePage(data) {
 
   updateCards("sec2Grid", data.sections.equipment.cards);
 
-  // The CSS custom property is on the hero element. Resolve the JSON image
-  // path against the stylesheet because the original path is stylesheet-relative.
   const stylesheet = document.querySelector('link[rel="stylesheet"]');
   const imageUrl = new URL(data.hero.image, stylesheet.href);
   document.getElementById("heroSection").style.setProperty(
