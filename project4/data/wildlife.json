@@ -1,0 +1,384 @@
+{
+  "categories": [
+    {
+      "id": "mammals",
+      "name": "Mammals",
+      "description": "Mammals use the Amazon's forests, rivers, and wetlands in many different ways.",
+      "animals": [
+        {
+          "id": "jaguar",
+          "name": "Jaguar",
+          "scientificName": "Panthera onca",
+          "summary": "A powerful rainforest cat that helps regulate prey populations.",
+          "image": {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Jaguar.jpg",
+            "alt": "Black jaguar resting on a log",
+            "credit": "Photo: Cburnett via Wikimedia Commons, CC BY-SA 3.0.",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jaguar.jpg"
+          },
+          "habitat": "Dense forests, wetlands, river edges, and seasonally flooded areas.",
+          "diet": "An opportunistic carnivore that can take fish, reptiles, birds, and mammals.",
+          "behavior": "Usually solitary. Jaguars are strong swimmers and often travel along rivers.",
+          "range": "The Amazon Basin is one of the most important strongholds for the species.",
+          "conservation": "Main conservation concerns include habitat loss, fragmentation, conflict with people, and loss of prey.",
+          "quickFacts": [
+            "Jaguars are the largest cats in the Americas.",
+            "They have an exceptionally powerful bite.",
+            "Their rosettes often contain small spots in the center."
+          ]
+        },
+        {
+          "id": "sloth",
+          "name": "Southern Two-toed Sloth",
+          "scientificName": "Choloepus didactylus",
+          "summary": "A slow-moving tree dweller that spends much of its life in the canopy.",
+          "image": {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Sloth_01.JPG",
+            "alt": "Two-toed sloth close-up",
+            "credit": "Photo: MariaCartas via Wikimedia Commons.",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sloth_01.JPG"
+          },
+          "habitat": "Lowland and flooded tropical forests, especially areas with abundant trees.",
+          "diet": "Mostly leaves, flowers, and other plant material.",
+          "behavior": "Arboreal and generally solitary. It is more active at night and can swim when needed.",
+          "range": "Found across much of northern South America, including large areas of the Amazon.",
+          "conservation": "Forest protection is important because sloths depend on connected tropical habitat.",
+          "quickFacts": [
+            "Two-toed sloths have long curved claws.",
+            "Their slow metabolism helps conserve energy.",
+            "Algae can grow in their coarse fur, helping them blend into vegetation."
+          ]
+        },
+        {
+          "id": "giant-river-otter",
+          "name": "Giant River Otter",
+          "scientificName": "Pteronura brasiliensis",
+          "summary": "A social aquatic mammal adapted to rivers, lakes, and slow-moving waterways.",
+          "image": {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Giant_otter_%28Pteronura_brasiliensis%29_juvenile.jpg",
+            "alt": "Giant otter (Pteronura brasiliensis) juvenile",
+            "credit": "Photo: Charles J. Sharp via Wikimedia Commons, CC BY-SA 4.0.",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giant_otter_(Pteronura_brasiliensis)_juvenile.jpg"
+          },
+          "habitat": "Freshwater rivers, oxbow lakes, flooded forests, and wetlands.",
+          "diet": "Mostly fish, with crustaceans and other aquatic prey also taken.",
+          "behavior": "Highly social. Families cooperate while traveling, hunting, and raising pups.",
+          "range": "Occurs in parts of the Amazon, Orinoco, and La Plata river systems.",
+          "conservation": "Pollution, habitat loss, overfishing, and historical hunting have affected populations.",
+          "quickFacts": [
+            "Giant river otters can form family groups.",
+            "They use vocalizations to communicate.",
+            "They are strong swimmers with streamlined bodies."
+          ]
+        },
+        {
+          "id": "capybara",
+          "name": "Capybara",
+          "scientificName": "Hydrochoerus hydrochaeris",
+          "summary": "The world's largest living rodent, closely tied to freshwater habitats.",
+          "image": {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/47/Hydrochaeris_hydrochaeris_-_Flickr_-_Dick_Culbert.jpg",
+            "alt": "A capybara in eastern Bolivia",
+            "credit": "Photo: Dick Culbert from Gibsons, B.C., Canada via Wikimedia Commons, CC BY 2.0.",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hydrochaeris_hydrochaeris_-_Flickr_-_Dick_Culbert.jpg"
+          },
+          "habitat": "Riverbanks, wetlands, flooded forests, and grassy areas near water.",
+          "diet": "Grasses, aquatic plants, and other vegetation.",
+          "behavior": "Social and semi-aquatic. Groups often rest near water and use swimming to escape danger.",
+          "range": "Widely distributed across northern and central South America.",
+          "conservation": "They are relatively adaptable, but healthy wetlands and freshwater systems remain important.",
+          "quickFacts": [
+            "Capybaras can remain underwater for several minutes.",
+            "They commonly live in groups.",
+            "Their feet are partly webbed."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "birds",
+      "name": "Birds",
+      "description": "The Amazon supports an enormous variety of birds, from canopy specialists to riverside species.",
+      "animals": [
+        {
+          "id": "harpy-eagle",
+          "name": "Harpy Eagle",
+          "scientificName": "Harpia harpyja",
+          "summary": "A large forest raptor with powerful talons adapted for hunting in the canopy.",
+          "image": {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/20/Harpy-eagle-action.jpg",
+            "alt": "Harpy eagle moving through rainforest vegetation",
+            "credit": "Photo: Haui Ared via Wikimedia Commons, CC BY-SA 4.0.",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Harpy-eagle-action.jpg"
+          },
+          "habitat": "Mature tropical forests with tall trees suitable for nesting.",
+          "diet": "Mostly arboreal mammals and large birds.",
+          "behavior": "Uses powerful flight and surprise attacks to hunt among trees.",
+          "range": "The species occurs through parts of Central and South America, including the Amazon.",
+          "conservation": "Large areas of mature forest are important for nesting and hunting.",
+          "quickFacts": [
+            "Harpy eagles have extremely strong feet and talons.",
+            "They build large nests high in trees.",
+            "They are among the largest living eagles."
+          ]
+        },
+        {
+          "id": "scarlet-macaw",
+          "name": "Scarlet Macaw",
+          "scientificName": "Ara macao",
+          "summary": "A brightly colored parrot known for strong social bonds and loud calls.",
+          "image": {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Scarlet_Macaw.jpg",
+            "alt": "Two scarlet macaws on a branch",
+            "credit": "Photo: Cburnett via Wikimedia Commons, CC BY-SA 3.0.",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Scarlet_Macaw.jpg"
+          },
+          "habitat": "Lowland rainforest, forest edges, and river corridors.",
+          "diet": "Fruit, seeds, nuts, and other plant material.",
+          "behavior": "Social and highly vocal, often traveling in pairs or small groups.",
+          "range": "Found from southern Mexico through much of northern South America.",
+          "conservation": "Habitat loss and capture for the wildlife trade are major concerns in parts of their range.",
+          "quickFacts": [
+            "Scarlet macaws have strong curved bills.",
+            "They can live for decades.",
+            "Pairs often remain closely bonded."
+          ]
+        },
+        {
+          "id": "toco-toucan",
+          "name": "Toco Toucan",
+          "scientificName": "Ramphastos toco",
+          "summary": "A large toucan recognized by its oversized colorful bill.",
+          "image": {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Toucan.jpg/1280px-Toucan.jpg",
+            "alt": "Toco toucan perched on a branch",
+            "credit": "Photo: Ankit Kadam via Wikimedia Commons, CC BY-SA 4.0.",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Toucan.jpg"
+          },
+          "habitat": "Forest edges, riverine woodland, savanna-forest mosaics, and tropical forests.",
+          "diet": "Fruit is important, along with insects, eggs, and small animals.",
+          "behavior": "Moves through the canopy and uses its bill to reach food.",
+          "range": "Broadly distributed in South America, including parts of the Amazon Basin.",
+          "conservation": "Maintaining forest and tree-cavity habitat supports breeding populations.",
+          "quickFacts": [
+            "The bill is large but relatively light because of its internal structure.",
+            "Toco toucans are strong fliers despite their bulky appearance.",
+            "They swallow fruit whole."
+          ]
+        },
+        {
+          "id": "hoatzin",
+          "name": "Hoatzin",
+          "scientificName": "Opisthocomus hoazin",
+          "summary": "A leaf-eating bird strongly associated with riverside and seasonally flooded vegetation.",
+          "image": {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Opisthocomus_hoazin_335722298.jpg",
+            "alt": "Hoatzin (Opisthocomus hoazin)",
+            "credit": "Photo: Philipp Hoenle, CC0, via Wikimedia Commons.",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Opisthocomus_hoazin_335722298.jpg"
+          },
+          "habitat": "Wet forests, swamps, and vegetation along slow-moving rivers and lagoons.",
+          "diet": "Mostly leaves, with some flowers and fruits.",
+          "behavior": "Often rests in groups near water. Young birds can use clawed wing digits to move through vegetation.",
+          "range": "Occurs across parts of the northern and central Amazon Basin and adjacent tropical South America.",
+          "conservation": "Protection of wetlands and riverside vegetation helps preserve suitable habitat.",
+          "quickFacts": [
+            "Hoatzins have a specialized digestive system for fermenting leaves.",
+            "They are poor fliers compared with many other birds.",
+            "Young birds have temporary claws on their wings."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reptiles",
+      "name": "Reptiles",
+      "description": "Reptiles occupy the forest floor, waterways, and canopy.",
+      "animals": [
+        {
+          "id": "green-anaconda",
+          "name": "Green Anaconda",
+          "scientificName": "Eunectes murinus",
+          "summary": "A huge semi-aquatic constrictor that spends much of its time in and around water.",
+          "image": {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Green-anaconda.jpg",
+            "alt": "Green anaconda resting near water",
+            "credit": "Photo: Steven G. Johnson via Wikimedia Commons, CC BY-SA 3.0.",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Green-anaconda.jpg"
+          },
+          "habitat": "Swamps, marshes, flooded forests, slow rivers, and oxbow lakes.",
+          "diet": "Fish, birds, turtles, and a variety of mammals.",
+          "behavior": "Usually ambushes prey from water and constricts it before swallowing.",
+          "range": "Found across much of tropical northern South America.",
+          "conservation": "Wetland and river protection helps maintain their habitat and prey base.",
+          "quickFacts": [
+            "Green anacondas are excellent swimmers.",
+            "Females are much larger than males.",
+            "Their eyes and nostrils are positioned high on the head."
+          ]
+        },
+        {
+          "id": "black-caiman",
+          "name": "Black Caiman",
+          "scientificName": "Melanosuchus niger",
+          "summary": "A large crocodilian that occupies rivers, floodplains, and other freshwater habitats.",
+          "image": {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Melanosuchus_niger_%28cropped-01%29.jpg",
+            "alt": "Black caiman, Rupununi River in southwestern Guyana",
+            "credit": "Photo: David Stanley via Wikimedia Commons.",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Melanosuchus_niger_(cropped-01).jpg"
+          },
+          "habitat": "Slow rivers, lagoons, flooded forests, and wetlands.",
+          "diet": "Fish, birds, reptiles, and mammals, with prey varying by age.",
+          "behavior": "Often waits motionless near the water's edge and becomes more active after dark.",
+          "range": "Native to much of the Amazon Basin.",
+          "conservation": "Wetland protection and sustainable management of wildlife are important to recovery and long-term survival.",
+          "quickFacts": [
+            "Black caimans are among the largest caimans.",
+            "Young animals eat smaller prey than adults.",
+            "They play an important role as freshwater predators."
+          ]
+        },
+        {
+          "id": "green-iguana",
+          "name": "Green Iguana",
+          "scientificName": "Iguana iguana",
+          "summary": "A tree-dwelling lizard commonly associated with warm tropical forests and rivers.",
+          "image": {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/05/Green_iguana_%28Iguana_iguana%29.JPG",
+            "alt": "Green iguana (Iguana iguana), the Pantanal, Brazil",
+            "credit": "Photo: Charles J. Sharp via Wikimedia Commons, CC BY-SA 4.0.",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Green_iguana_(Iguana_iguana).JPG"
+          },
+          "habitat": "Forest edges, riverbanks, and trees close to water.",
+          "diet": "Mostly leaves, shoots, flowers, and fruit.",
+          "behavior": "Basks in warm areas and can dive or swim to escape predators.",
+          "range": "Occurs widely through tropical Central and South America.",
+          "conservation": "Forest and riparian habitat protection helps populations remain stable.",
+          "quickFacts": [
+            "Green iguanas are strong swimmers.",
+            "They use a long tail for balance and defense.",
+            "Juveniles often spend more time on lower vegetation."
+          ]
+        },
+        {
+          "id": "red-footed-tortoise",
+          "name": "Red-footed Tortoise",
+          "scientificName": "Chelonoidis carbonarius",
+          "summary": "A land tortoise recognized by the reddish scales on its legs and head.",
+          "image": {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Tortuga_morrocoy_Sabanero.jpg",
+            "alt": "A friendly Chelonoidis carbonarius",
+            "credit": "Photo: Flints via Wikimedia Commons, CC BY-SA 3.0.",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tortuga_morrocoy_Sabanero.jpg"
+          },
+          "habitat": "Forest, savanna, and forest-edge environments with access to cover and food.",
+          "diet": "A broad plant-based diet including leaves, fruits, flowers, and fallen vegetation.",
+          "behavior": "Mostly terrestrial and active during warm, humid periods.",
+          "range": "Occurs in northern and central South America, including the Amazon region.",
+          "conservation": "Habitat conversion and illegal collection can affect populations.",
+          "quickFacts": [
+            "The shell can show yellow, orange, or red markings.",
+            "Red-footed tortoises use scent and visual cues to communicate.",
+            "They can live for many decades."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "amphibians",
+      "name": "Amphibians",
+      "description": "Warm, humid forests and clean water create important habitat for frogs and other amphibians.",
+      "animals": [
+        {
+          "id": "poison-dart-frog",
+          "name": "Poison Dart Frog",
+          "scientificName": "Dendrobatidae (family)",
+          "summary": "A group of colorful frogs famous for chemical defenses and rainforest lifestyles.",
+          "image": {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Poison_Dart_Frog.jpg",
+            "alt": "Red poison dart frog on forest litter",
+            "credit": "Photo: Dwayne Reilander via Wikimedia Commons, CC BY-SA 4.0.",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Poison_Dart_Frog.jpg"
+          },
+          "habitat": "Moist tropical forests, leaf litter, and vegetation near streams.",
+          "diet": "Mostly very small insects and other invertebrates.",
+          "behavior": "Many species are active by day and use bright colors as warning signals.",
+          "range": "Dart frog species occur across tropical Central and South America; several occur in Amazonian and neighboring forests.",
+          "conservation": "Protecting clean, humid forest habitat is essential because amphibians are sensitive to environmental change.",
+          "quickFacts": [
+            "Not every poison dart frog is highly toxic in the wild.",
+            "Diet can influence the chemicals present in some species.",
+            "Many species care for their eggs and tadpoles."
+          ]
+        },
+        {
+          "id": "glass-frog",
+          "name": "Glass Frog",
+          "scientificName": "Centrolenidae (family)",
+          "summary": "Small tree frogs known for translucent skin and a life closely connected to streams.",
+          "image": {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Centrolene_quindianum02a.jpg",
+            "alt": "Glass frog viewed from the side",
+            "credit": "Photo: Mauricio Rivera Correa via Wikimedia Commons, CC BY-SA 2.5.",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Centrolene_quindianum02a.jpg"
+          },
+          "habitat": "Humid forests near clear streams and small rivers.",
+          "diet": "Small insects and other tiny invertebrates.",
+          "behavior": "Mostly nocturnal and often found on leaves above flowing water.",
+          "range": "Glass frogs are diverse across tropical Central and South America, including the Amazon region.",
+          "conservation": "Clean streams and intact forest are important for their reproductive cycle.",
+          "quickFacts": [
+            "Some species have translucent skin through which organs can be seen.",
+            "Eggs are commonly laid on vegetation above streams.",
+            "Tadpoles drop into the water after hatching."
+          ]
+        },
+        {
+          "id": "amazon-horned-frog",
+          "name": "Amazon Horned Frog",
+          "scientificName": "Ceratophrys cornuta",
+          "summary": "A large, broad-bodied frog that uses camouflage and ambush tactics.",
+          "image": {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Ceratophrys_cornuta_-_1.jpg",
+            "alt": "Amazon horned frog",
+            "credit": "Photo: Maarten Sepp via Wikimedia Commons, CC BY-SA 4.0.",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ceratophrys_cornuta_-_1.jpg"
+          },
+          "habitat": "Humid lowland rainforest and moist leaf litter.",
+          "diet": "Insects and other small animals; larger individuals can take substantial prey.",
+          "behavior": "Often remains buried in leaf litter and waits for prey to approach.",
+          "range": "Found in parts of the western and central Amazon region.",
+          "conservation": "Forest and leaf-litter habitat protection is important.",
+          "quickFacts": [
+            "Its horn-like projections help break up the outline of the head.",
+            "It has a very wide mouth for an amphibian.",
+            "Camouflage is a major part of its hunting strategy."
+          ]
+        },
+        {
+          "id": "red-eyed-tree-frog",
+          "name": "Red-eyed Tree Frog",
+          "scientificName": "Agalychnis callidryas",
+          "summary": "A bright green tree frog with vivid eyes and strong climbing ability.",
+          "image": {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/be/Red_eyed_tree_frog_edit2.jpg",
+            "alt": "Red-eyed tree frog",
+            "credit": "Photo: Careyjamesbalboa (Carey James Balboa) via Wikimedia Commons.",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Red_eyed_tree_frog_edit2.jpg"
+          },
+          "habitat": "Lowland tropical forests and vegetation near ponds or streams.",
+          "diet": "Mostly insects and other small invertebrates.",
+          "behavior": "Nocturnal and arboreal. It uses sticky toe pads to cling to leaves.",
+          "range": "Native to parts of Central America and northern South America.",
+          "conservation": "Forest loss and changes to breeding habitat can affect local populations.",
+          "quickFacts": [
+            "The large eyes may help startle predators.",
+            "Its toe pads help it climb smooth vegetation.",
+            "Breeding often occurs around temporary or permanent water."
+          ]
+        }
+      ]
+    }
+  ]
+}
