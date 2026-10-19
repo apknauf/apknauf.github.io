@@ -1,12 +1,5 @@
 'use strict';
 
-/**
- * Wildlife Explorer: a single-page, two-step interaction.
- * Step 1 shows the categories, step 2 shows the animals in a category,
- * and the final view shows everything about one animal. All views are
- * built with DOM manipulation from data loaded out of data/wildlife.json.
- */
-
 const DATA_URL = 'data/wildlife.json';
 const EXPLORER_ID = 'explorer';
 const SITE_NAME = 'Amazon Rainforest Explorer';
@@ -18,10 +11,6 @@ const TEXT_SECTIONS = [
   { heading: 'Conservation', key: 'conservation' }
 ];
 
-/**
- * Builds an element. children may be elements or strings (turned into text nodes).
- * options: className, text, attributes (object), onClick (function).
- */
 function createElement(tagName, options = {}, children = []) {
   const element = document.createElement(tagName);
   if (options.className) {
@@ -42,7 +31,6 @@ function createElement(tagName, options = {}, children = []) {
   return element;
 }
 
-// Finds an animal (and the category that holds it) by its id.
 function findAnimalById(data, animalId) {
   for (const category of data.categories) {
     const animal = category.animals.find((item) => item.id === animalId);
@@ -53,7 +41,6 @@ function findAnimalById(data, animalId) {
   return null;
 }
 
-// Replaces a broken image with a short text note so the layout stays intact.
 function handleImageError(event) {
   const note = createElement('p', {
     className: 'image-fallback',
@@ -68,7 +55,6 @@ function createImage(image) {
   });
 }
 
-// Creates the captioned photo with its credit and source link.
 function createFigure(animal) {
   const image = createImage(animal.image);
   image.addEventListener('error', handleImageError);
@@ -96,10 +82,6 @@ function createNotice(label, message) {
   ]);
 }
 
-/**
- * Creates the breadcrumb trail. Each item is { label, onSelect }.
- * Items with href become links, items with onSelect become buttons; the last item is plain text.
- */
 function createBreadcrumbs(trail) {
   const breadcrumbs = createElement('div', { className: 'breadcrumbs' });
   trail.forEach((item, index) => {
@@ -125,10 +107,6 @@ function createBreadcrumbs(trail) {
   return breadcrumbs;
 }
 
-/**
- * Creates a card with a picture, title, text and one action button.
- * options: image, pillLabel, title, text, buttonLabel, buttonDescription, onSelect.
- */
 function createCard(options) {
   const content = createElement('div', { className: 'content' }, [
     createPill(options.pillLabel),
@@ -163,7 +141,6 @@ function createAnimalCard(animal, category, onSelect) {
   });
 }
 
-// A category card borrows the first animal's photo as its cover image.
 function createCategoryCard(category, onSelect) {
   const count = category.animals.length;
   return createCard({
@@ -192,11 +169,6 @@ function createQuickFactsPanel(quickFacts) {
   ]);
 }
 
-/**
- * Swaps the explorer contents for a new view, updates the tab title, and
- * (after the first view) moves focus to the heading so screen readers
- * announce the change.
- */
 function renderView(root, title, nodes, shouldMoveFocus) {
   root.replaceChildren(...nodes);
   document.title = `${title} | ${SITE_NAME}`;
@@ -207,7 +179,6 @@ function renderView(root, title, nodes, shouldMoveFocus) {
   }
 }
 
-// Final view: every detail for one animal.
 function showAnimalDetail(context, category, animal) {
   const hero = createElement('div', { className: 'animal-hero' }, [
     createElement('div', { className: 'image-wrap' }, [createFigure(animal)]),
@@ -238,7 +209,6 @@ function showAnimalDetail(context, category, animal) {
   ], true);
 }
 
-// Step 2: the animals in one category.
 function showAnimals(context, category, shouldMoveFocus) {
   const cards = category.animals.map((animal) =>
     createAnimalCard(animal, category, () => showAnimalDetail(context, category, animal))
@@ -258,7 +228,6 @@ function showAnimals(context, category, shouldMoveFocus) {
   ], shouldMoveFocus);
 }
 
-// Step 1: the list of categories.
 function showCategories(context, shouldMoveFocus) {
   const cards = context.data.categories.map((category) =>
     createCategoryCard(category, () => showAnimals(context, category, true))
@@ -274,7 +243,6 @@ function showCategories(context, shouldMoveFocus) {
   ], shouldMoveFocus);
 }
 
-// Fetches and validates the JSON file. Throws if the request or data is bad.
 async function fetchWildlifeData() {
   const response = await fetch(DATA_URL);
   if (!response.ok) {
@@ -295,7 +263,6 @@ function showLoading(root) {
   }));
 }
 
-// Explains the problem and offers a retry button.
 function showError(root, onRetry) {
   root.replaceChildren(createElement('div', {
     className: 'notice error-message',
@@ -313,10 +280,6 @@ function showError(root, onRetry) {
   ]));
 }
 
-/**
- * Opens straight to an animal when the page address ends in its id
- * (for example wildlife.html#jaguar); otherwise starts at the categories.
- */
 function showStartingView(context) {
   const match = findAnimalById(context.data, window.location.hash.slice(1));
   if (match) {
@@ -326,7 +289,6 @@ function showStartingView(context) {
   }
 }
 
-// Loads the data, then shows the first view (or the error message).
 async function loadExplorer(root) {
   showLoading(root);
   try {

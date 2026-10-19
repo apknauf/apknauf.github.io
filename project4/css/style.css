@@ -417,6 +417,63 @@ main {
     color: var(--muted);
 }
 
+.explorer-button {
+  min-height: 44px;
+  min-width: 44px;
+  border: 2px solid transparent;
+  font: inherit;
+  font-weight: 700;
+  line-height: 1.2;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.explorer-button:hover,
+.explorer-button:focus-visible,
+.explorer-button:active {
+  background: var(--green-900);
+  border-color: var(--gold);
+}
+
+.breadcrumb-button {
+  min-height: 44px;
+  padding: 0 0.25rem;
+  border: 0;
+  background: none;
+  color: var(--green-800);
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.breadcrumb-button:hover,
+.breadcrumb-button:active {
+  color: var(--green-900);
+  text-decoration-thickness: 3px;
+}
+
+.breadcrumb-button:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+#explorer h1:focus {
+  outline: none;
+}
+
+.image-fallback {
+  margin: 0;
+  padding: 2rem 1rem;
+  background: var(--green-100);
+  color: var(--ink);
+  text-align: center;
+}
+
+.error-message p {
+  margin-top: 0;
+}
+
 @media (min-width: 700px) {
     .nav-inner {
         flex-direction: row;
