@@ -537,7 +537,7 @@ main {
     }
 }
 
-/* ---------- Project 5: accounts, feedback, and Firebase states ---------- */
+/* Project 5 */
 
 [hidden] {
     display: none !important;
@@ -616,7 +616,7 @@ body.auth-ready #auth-gate {
     display: none;
 }
 
-/* Nav log out button styled like the nav links */
+/* Nav log out button */
 .nav-button {
     border: 0;
     background: none;
