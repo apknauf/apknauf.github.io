@@ -1,1 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Aidan Knauf">
+    <meta name="description" content="Explore the Amazon rainforest, its wildlife, and its ecosystems. Log in or sign up to open the full explorer.">
+    <meta name="keywords" content="Amazon Rainforest, wildlife, biodiversity, rainforest animals, conservation">
+    <title>Home | Amazon Rainforest Explorer</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/home.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header">
+    <div class="container header-inner">
+        <div>
+            <p class="course-label">University of Mississippi • CSCI 3054</p>
+            <p class="eyebrow">Web Programming Project 5</p>
+            <a class="brand" href="index.html">Amazon Rainforest Explorer</a>
+        </div>
+    </div>
+</header>
+<nav class="main-nav" aria-label="Primary navigation">
+    <div class="container nav-inner">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="wildlife.html">Wildlife Explorer</a>
+        <a href="ecosystem.html">Ecosystem</a>
+        <a href="contact.html">Contact</a>
+        <a href="index.html#account" id="nav-account">Log In / Sign Up</a>
+        <button type="button" id="nav-logout" class="nav-button" hidden>Log Out</button>
+        <a href="../index.html">Back to Main Page</a>
+    </div>
+    <div class="container"><p id="nav-message" class="status" aria-live="polite"></p></div>
+</nav>
+<main id="main-content">
 
+<section class="hero">
+    <div class="container hero-grid">
+        <div class="hero-copy">
+            <span class="pill">Explore • Learn • Protect</span>
+            <h1>Discover the Amazon Rainforest</h1>
+            <p>The Amazon Rainforest Explorer is an educational site that helps users learn about the animals and ecosystems of the Amazon through a simple guided experience.</p>
+            <p>Create a free account or log in below to open the Wildlife Explorer, Ecosystem, and Contact pages.</p>
+            <div class="button-row">
+                <a class="button-link button-gold" href="#account">Log In or Sign Up</a>
+                <a class="button-link" href="wildlife.html">Explore Wildlife</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <figure class="media-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Rainforest_canopy_layer_top_view.jpg" alt="Dense rainforest canopy viewed from above" loading="lazy">
+                <figcaption>A view into the dense layers of a tropical rainforest.<br><small>Photo: Chamberlain of Nilai via Wikimedia Commons, CC BY-SA 4.0. <a href="https://commons.wikimedia.org/wiki/File:Rainforest_canopy_layer_top_view.jpg" target="_blank" rel="noopener">Source</a></small></figcaption>
+            </figure>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="account" aria-labelledby="account-heading">
+    <div class="container login-layout">
+        <article class="panel">
+            <div class="section-heading">
+                <h2 id="account-heading">Your Account</h2>
+                <p>An account unlocks every page of the explorer on any computer.</p>
+            </div>
+
+            <p id="redirect-notice" class="notice" role="status" hidden></p>
+            <p id="auth-loading" class="status status-working" role="status"><span class="spinner" aria-hidden="true"></span>Checking whether you are signed in…</p>
+
+            <div id="signed-out-view" hidden>
+                <div class="mode-toggle" role="group" aria-label="Log in or create an account">
+                    <button type="button" id="show-login" aria-pressed="true">Log In</button>
+                    <button type="button" id="show-signup" aria-pressed="false">Sign Up</button>
+                </div>
+
+                <form id="login-form" class="form-card">
+                    <h3>Log In</h3>
+                    <p class="small">Already have an account? Enter your email and password.</p>
+                    <label for="login-email">Email</label>
+                    <input id="login-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+                    <label for="login-password">Password</label>
+                    <input id="login-password" name="password" type="password" autocomplete="current-password" required>
+                    <button type="submit">Log In</button>
+                    <p id="login-status" class="status" aria-live="polite"></p>
+                </form>
+
+                <form id="signup-form" class="form-card" hidden>
+                    <h3>Create an Account</h3>
+                    <p class="small">New here? Choose a password with at least 6 characters.</p>
+                    <label for="signup-email">Email</label>
+                    <input id="signup-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+                    <label for="signup-password">Password</label>
+                    <input id="signup-password" name="password" type="password" autocomplete="new-password" minlength="6" required>
+                    <label for="signup-confirm">Confirm Password</label>
+                    <input id="signup-confirm" name="confirm" type="password" autocomplete="new-password" minlength="6" required>
+                    <button type="submit">Create Account</button>
+                    <p id="signup-status" class="status" aria-live="polite"></p>
+                </form>
+            </div>
+
+            <div id="signed-in-view" hidden>
+                <p id="account-message" class="status" aria-live="polite"></p>
+                <p class="notice">You are signed in as <strong id="user-email"></strong>.</p>
+                <p>Pick where to go next:</p>
+                <div class="button-row">
+                    <a class="button-link" href="wildlife.html">Wildlife Explorer</a>
+                    <a class="button-link" href="ecosystem.html">Ecosystem</a>
+                    <a class="button-link" href="contact.html">Contact Us</a>
+                    <button type="button" id="logout-button" class="button-secondary">Log Out</button>
+                </div>
+
+                <form id="password-form" class="form-card">
+                    <h3>Change Password</h3>
+                    <p class="small">Enter your current password, then your new one twice.</p>
+                    <label for="current-password">Current Password</label>
+                    <input id="current-password" name="current" type="password" autocomplete="current-password" required>
+                    <label for="new-password">New Password</label>
+                    <input id="new-password" name="new" type="password" autocomplete="new-password" minlength="6" required>
+                    <label for="confirm-password">Confirm New Password</label>
+                    <input id="confirm-password" name="confirm" type="password" autocomplete="new-password" minlength="6" required>
+                    <button type="submit">Change Password</button>
+                    <p id="password-status" class="status" aria-live="polite"></p>
+                </form>
+            </div>
+        </article>
+
+        <aside class="panel">
+            <h2>How It Works</h2>
+            <ol class="steps-list">
+                <li><strong>Sign up or log in</strong> with your email and a password.</li>
+                <li><strong>Pick an animal group</strong> in the Wildlife Explorer.</li>
+                <li><strong>Choose an animal</strong> to read about its habitat, diet, and conservation.</li>
+                <li><strong>Send us a message</strong> from the Contact page with questions or ideas.</li>
+            </ol>
+            <h2>Why Explore the Amazon?</h2>
+            <p>The Amazon is one of Earth's most important ecosystems. It supports an extraordinary range of wildlife, influences regional water cycles, and supports millions of people.</p>
+        </aside>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-heading">
+            <h2>Featured Wildlife</h2>
+            <p>Start with a few of the species that make the Amazon such an interesting place to study.</p>
+        </div>
+        <div class="card-grid">
+            <article class="card">
+                <h3>Jaguar</h3>
+                <figure class="media-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Jaguar.jpg" alt="Black jaguar resting on a log" loading="lazy">
+                    <figcaption>Jaguars are important predators in tropical forest ecosystems.<br><small>Photo: Cburnett via Wikimedia Commons, CC BY-SA 3.0. <a href="https://commons.wikimedia.org/wiki/File:Jaguar.jpg" target="_blank" rel="noopener">Source</a></small></figcaption>
+                </figure>
+                <a class="card-link" href="wildlife.html#jaguar">Learn about the Jaguar</a>
+            </article>
+            <article class="card">
+                <h3>Harpy Eagle</h3>
+                <figure class="media-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Harpy-eagle-action.jpg" alt="Harpy eagle moving through rainforest vegetation" loading="lazy">
+                    <figcaption>Harpy eagles hunt among the upper layers of mature forests.<br><small>Photo: Haui Ared via Wikimedia Commons, CC BY-SA 4.0. <a href="https://commons.wikimedia.org/wiki/File:Harpy-eagle-action.jpg" target="_blank" rel="noopener">Source</a></small></figcaption>
+                </figure>
+                <a class="card-link" href="wildlife.html#harpy-eagle">Learn about the Harpy Eagle</a>
+            </article>
+            <article class="card">
+                <h3>Green Anaconda</h3>
+                <figure class="media-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Green-anaconda.jpg" alt="Green anaconda resting near water" loading="lazy">
+                    <figcaption>Green anacondas are strongly associated with freshwater habitats.<br><small>Photo: Steven G. Johnson via Wikimedia Commons, CC BY-SA 3.0. <a href="https://commons.wikimedia.org/wiki/File:Green-anaconda.jpg" target="_blank" rel="noopener">Source</a></small></figcaption>
+                </figure>
+                <a class="card-link" href="wildlife.html#green-anaconda">Learn about the Anaconda</a>
+            </article>
+        </div>
+        <p class="small">These pages open after you log in.</p>
+    </div>
+</section>
+
+</main>
+<footer class="site-footer">
+    <div class="container footer-grid">
+        <div>
+            <strong>Amazon Rainforest Explorer</strong>
+            <p>CSCI 3054 Web Programming • Project 5</p>
+        </div>
+        <div>
+            <p><a href="contact.html">Contact Us</a></p>
+            <p>&copy; 2026 Aidan Knauf</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
