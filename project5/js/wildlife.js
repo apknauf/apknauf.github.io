@@ -1,1 +1,312 @@
+import { collection, getDocs, query, orderBy } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
+import { db } from './firebase-init.js';
+import { getUser } from './auth.js';
+import { createSpinner, describeError, withTimeout } from './ui.js';
 
+const EXPLORER_ID = 'explorer';
+const SITE_NAME = 'Amazon Rainforest Explorer';
+const TEXT_SECTIONS = [
+  { heading: 'Habitat', key: 'habitat' },
+  { heading: 'Diet', key: 'diet' },
+  { heading: 'Behavior', key: 'behavior' },
+  { heading: 'Geographic Range', key: 'range' },
+  { heading: 'Conservation', key: 'conservation' }
+];
+
+function createElement(tagName, options = {}, children = []) {
+  const element = document.createElement(tagName);
+  if (options.className) {
+    element.className = options.className;
+  }
+  if (options.text !== undefined) {
+    element.textContent = options.text;
+  }
+  Object.entries(options.attributes || {}).forEach(([name, value]) => {
+    element.setAttribute(name, value);
+  });
+  if (options.onClick) {
+    element.addEventListener('click', options.onClick);
+  }
+  children.forEach((child) => {
+    element.append(child);
+  });
+  return element;
+}
+
+function findAnimalById(data, animalId) {
+  for (const category of data.categories) {
+    const animal = category.animals.find((item) => item.id === animalId);
+    if (animal) {
+      return { category, animal };
+    }
+  }
+  return null;
+}
+
+function handleImageError(event) {
+  const note = createElement('p', {
+    className: 'image-fallback',
+    text: `Image unavailable: ${event.target.alt}`
+  });
+  event.target.replaceWith(note);
+}
+
+function createImage(image) {
+  return createElement('img', {
+    attributes: { src: image.url, alt: image.alt, loading: 'lazy' }
+  });
+}
+
+function createFigure(animal) {
+  const image = createImage(animal.image);
+  image.addEventListener('error', handleImageError);
+  const sourceLink = createElement('a', {
+    text: 'Source',
+    attributes: { href: animal.image.sourceUrl, target: '_blank', rel: 'noopener' }
+  });
+  const credit = createElement('small', {}, [`${animal.image.credit} `, sourceLink]);
+  const caption = createElement('figcaption', {}, [
+    `${animal.name} image`,
+    createElement('br'),
+    credit
+  ]);
+  return createElement('figure', { className: 'media-card' }, [image, caption]);
+}
+
+function createPill(label) {
+  return createElement('span', { className: 'pill', text: label });
+}
+
+function createNotice(label, message) {
+  return createElement('div', { className: 'notice' }, [
+    createElement('strong', { text: label }),
+    ` ${message}`
+  ]);
+}
+
+function createBreadcrumbs(trail) {
+  const breadcrumbs = createElement('div', { className: 'breadcrumbs' });
+  trail.forEach((item, index) => {
+    if (index > 0) {
+      breadcrumbs.append(' / ');
+    }
+    if (item.href) {
+      breadcrumbs.append(createElement('a', { text: item.label, attributes: { href: item.href } }));
+    } else if (item.onSelect) {
+      breadcrumbs.append(createElement('button', {
+        className: 'breadcrumb-button',
+        text: item.label,
+        attributes: { type: 'button' },
+        onClick: item.onSelect
+      }));
+    } else {
+      breadcrumbs.append(createElement('span', {
+        text: item.label,
+        attributes: { 'aria-current': 'page' }
+      }));
+    }
+  });
+  return breadcrumbs;
+}
+
+function createCard(options) {
+  const content = createElement('div', { className: 'content' }, [
+    createPill(options.pillLabel),
+    createElement('h2', { text: options.title }),
+    createElement('p', { text: options.text }),
+    createElement('button', {
+      className: 'card-link explorer-button',
+      text: options.buttonLabel,
+      attributes: { type: 'button', 'aria-label': options.buttonDescription },
+      onClick: options.onSelect
+    })
+  ]);
+  const card = createElement('article', { className: 'animal-card' });
+  if (options.image) {
+    const image = createImage(options.image);
+    image.addEventListener('error', handleImageError);
+    card.append(image);
+  }
+  card.append(content);
+  return card;
+}
+
+function createAnimalCard(animal, category, onSelect) {
+  return createCard({
+    image: animal.image,
+    pillLabel: category.name,
+    title: animal.name,
+    text: animal.summary,
+    buttonLabel: 'View Animal',
+    buttonDescription: `View ${animal.name}`,
+    onSelect
+  });
+}
+
+function createCategoryCard(category, onSelect) {
+  const count = category.animals.length;
+  return createCard({
+    image: category.animals[0] ? category.animals[0].image : null,
+    pillLabel: `${count} ${count === 1 ? 'animal' : 'animals'}`,
+    title: category.name,
+    text: category.description,
+    buttonLabel: `Explore ${category.name}`,
+    buttonDescription: `Explore ${category.name}`,
+    onSelect
+  });
+}
+
+function createInfoPanel(heading, text) {
+  return createElement('article', { className: 'panel' }, [
+    createElement('h2', { text: heading }),
+    createElement('p', { text })
+  ]);
+}
+
+function createQuickFactsPanel(quickFacts) {
+  const facts = quickFacts.map((fact) => createElement('li', { text: fact }));
+  return createElement('article', { className: 'panel' }, [
+    createElement('h2', { text: 'Quick Facts' }),
+    createElement('ul', { className: 'fact-list' }, facts)
+  ]);
+}
+
+function renderView(root, title, nodes, shouldMoveFocus) {
+  root.replaceChildren(...nodes);
+  document.title = `${title} | ${SITE_NAME}`;
+  const heading = root.querySelector('h1');
+  if (heading && shouldMoveFocus) {
+    heading.setAttribute('tabindex', '-1');
+    heading.focus();
+  }
+}
+
+function showAnimalDetail(context, category, animal) {
+  const hero = createElement('div', { className: 'animal-hero' }, [
+    createElement('div', { className: 'image-wrap' }, [createFigure(animal)]),
+    createElement('div', { className: 'panel' }, [
+      createPill(category.name),
+      createElement('h1', { text: animal.name }),
+      createElement('p', {}, [createElement('em', { text: animal.scientificName })]),
+      createElement('p', { text: animal.summary }),
+      createElement('button', {
+        className: 'button-link explorer-button',
+        text: `Back to ${category.name}`,
+        attributes: { type: 'button' },
+        onClick: () => showAnimals(context, category, true)
+      })
+    ])
+  ]);
+  const panels = TEXT_SECTIONS.map((section) => createInfoPanel(section.heading, animal[section.key]));
+  panels.push(createQuickFactsPanel(animal.quickFacts));
+  const trail = [
+    { label: 'Wildlife Explorer', onSelect: () => showCategories(context, true) },
+    { label: category.name, onSelect: () => showAnimals(context, category, true) },
+    { label: animal.name }
+  ];
+  renderView(context.root, animal.name, [
+    createBreadcrumbs(trail),
+    hero,
+    createElement('div', { className: 'info-grid' }, panels)
+  ], true);
+}
+
+function showAnimals(context, category, shouldMoveFocus) {
+  const cards = category.animals.map((animal) =>
+    createAnimalCard(animal, category, () => showAnimalDetail(context, category, animal))
+  );
+  const trail = [
+    { label: 'Wildlife Explorer', onSelect: () => showCategories(context, true) },
+    { label: category.name }
+  ];
+  renderView(context.root, category.name, [
+    createBreadcrumbs(trail),
+    createElement('div', { className: 'section-heading' }, [
+      createElement('h1', { text: category.name }),
+      createElement('p', { text: category.description })
+    ]),
+    createNotice('Step 2:', 'Choose one animal below to view its information page.'),
+    createElement('div', { className: 'animal-grid' }, cards)
+  ], shouldMoveFocus);
+}
+
+function showCategories(context, shouldMoveFocus) {
+  const cards = context.data.categories.map((category) =>
+    createCategoryCard(category, () => showAnimals(context, category, true))
+  );
+  renderView(context.root, 'Wildlife Explorer', [
+    createBreadcrumbs([{ label: 'Home', href: 'index.html' }, { label: 'Wildlife Explorer' }]),
+    createElement('div', { className: 'section-heading' }, [
+      createElement('h1', { text: 'Wildlife Explorer' }),
+      createElement('p', { text: 'Start with one of the animal groups. Your next choice will depend on the group you select.' })
+    ]),
+    createNotice('Step 1:', 'Choose a category. In the next step, you will see the animals in that category.'),
+    createElement('div', { className: 'animal-grid' }, cards)
+  ], shouldMoveFocus);
+}
+
+async function fetchWildlifeData() {
+  const categoriesQuery = query(collection(db, 'categories'), orderBy('order'));
+  const snapshot = await withTimeout(getDocs(categoriesQuery), 15000);
+  const categories = snapshot.docs.map((doc) => doc.data());
+  if (categories.length === 0) {
+    throw new Error('The database does not contain any wildlife categories yet.');
+  }
+  return { categories };
+}
+
+function showLoading(root) {
+  root.replaceChildren(createElement('p', {
+    className: 'status status-working',
+    attributes: { role: 'status' }
+  }, [createSpinner(), 'Loading wildlife data from the database…']));
+}
+
+function showError(root, error, onRetry) {
+  root.replaceChildren(createElement('div', {
+    className: 'status status-error error-message',
+    attributes: { role: 'alert' }
+  }, [
+    createElement('p', {
+      text: `The wildlife data could not be loaded. ${describeError(error)}`
+    }),
+    createElement('button', {
+      className: 'button-link explorer-button',
+      text: 'Try again',
+      attributes: { type: 'button' },
+      onClick: onRetry
+    })
+  ]));
+}
+
+function showStartingView(context) {
+  const match = findAnimalById(context.data, window.location.hash.slice(1));
+  if (match) {
+    showAnimalDetail(context, match.category, match.animal);
+  } else {
+    showCategories(context, false);
+  }
+}
+
+async function loadExplorer(root) {
+  showLoading(root);
+  try {
+    const data = await fetchWildlifeData();
+    showStartingView({ root, data });
+  } catch (error) {
+    showError(root, error, () => loadExplorer(root));
+  }
+}
+
+function initExplorer() {
+  const root = document.getElementById(EXPLORER_ID);
+  if (root) {
+    loadExplorer(root);
+  }
+}
+
+getUser().then((user) => {
+  if (user) {
+    initExplorer();
+  }
+});
